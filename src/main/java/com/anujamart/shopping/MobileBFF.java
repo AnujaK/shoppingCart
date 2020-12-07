@@ -1,6 +1,7 @@
 package com.anujamart.shopping;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.List;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -36,6 +37,13 @@ public class MobileBFF {
 	@RequestMapping("/api/mobile/v1/showConfirmation")
 	public ResponseEntity<String> orderConfirmed(Cart aCart){
 			return shoppingCartService.orderConfirmed(aCart);
+	}
+
+	public boolean addItems(List<String> mySKUEntryRecords, Cart aCart) {
+		for (String record : mySKUEntryRecords) {
+			aCart.add(record);
+		}
+		return true;
 	}
 
 

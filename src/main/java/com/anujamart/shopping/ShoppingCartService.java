@@ -14,6 +14,11 @@ public class ShoppingCartService {
 		return false;
 	}
 	
+	/*
+	 * @RequestMapping("/api/v1/addMultipleItems") public boolean
+	 * addItemsToCart(List<Item> item, Cart aCart){ return false; }
+	 */
+	
 	@RequestMapping("/api/v1/remove")
 	public void removeItemFromCart(Item anItem, Cart aCart){
 	}
@@ -29,5 +34,6 @@ public class ShoppingCartService {
 		return null;
 		//Payment service confirms 
 	}
+
 }
 
